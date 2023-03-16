@@ -1,0 +1,17 @@
+.hide{
+    display: none;
+}
+
+#steps{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
