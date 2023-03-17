@@ -1,5 +1,7 @@
 # Tela de Cadastro de endereço
 
+## Descrição
+
 Tela de cadastro de endereço que se auto-completa com o CEP
 
 ## Tecnologias
@@ -12,11 +14,11 @@ Tela de cadastro de endereço que se auto-completa com o CEP
 
 🍕BootStrap
 
-# Motivação
+## Motivação
 
 Esse projeto foi desenvolvido com o intuito de reforçar funções JavaScript, treinar o uso de APIs e BootStrap.
 
-# Autor
+## Autor
 
 Linkedin: https://www.linkedin.com/in/pedro-teixeira-51a75b265/
 
