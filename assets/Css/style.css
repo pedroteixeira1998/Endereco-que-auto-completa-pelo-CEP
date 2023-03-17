@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Signika+Negative:wght@400;700&display=swap');
 
 :root{
-    --line-color: rgb(202, 195, 195);
+    --line-color: rgba(224, 220, 220, 0.329);
     --text-color: rgb(155, 147, 147);
     --primary-color: #000;
+    --text-disable: rgb(77, 77, 77);
+    --bg-disable: rgb(230, 230, 230);
+    --border-focus: #797070;
+    }
 
-}
+
 
 *{
     font-family: 'Signika Negative', sans-serif;
@@ -65,3 +69,38 @@
     border-bottom: 2px solid var(--line-color);
     padding-bottom: 10px;
 }
+#order-form-container {
+    max-width: 700px;
+}
+
+#form-adress{
+    padding-top: 15px;
+}
+
+#order-form-container input,
+#order-form-container select {
+  border: 2px solid var(--line-color);
+  color: var(--text-color);
+}
+
+#order-form-container select {
+    padding: 1rem 0.75rem;
+  }
+
+#order-form-container label{
+    color: var(--text-color);
+  }
+
+  #order-form-container input:disabled,
+  #order-form-container select:disabled {
+    background-color: var(--bg-disable) ;
+    color: var(--text-disable);
+  }
+
+  #order-form-container input:focus{
+    border-color: var(--border-focus);
+  }
+
+  #order-form-container .form-floating > label {
+    left: 1em;
+  }
