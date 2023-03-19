@@ -44,8 +44,7 @@
       </div>
     </div>
     <div id="form-header">
-      <h2>Cadastre o seu endereço</h2>
-      <p>Preencha os campos para podermos enviar seus produtos</p>
+      <h2>Adicione novo endereço</h2>
     </div>
     <form id="address-form">
       <div class="row mb-3">
@@ -61,8 +60,8 @@
           <label for="ID">Identificação do endereço. Ex: Casa de Campo, trabalho, principal, etc.*</label>
         </div>
       </div>
-      <div class="row mb-3">
-        <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
+      <div class="row mb-1">
+        <div class="form-floating" id="cep">
           <input
             type="text"
             class="form-control shadow-none"
@@ -74,6 +73,7 @@
             required
           />
           <label for="cep">CEP*</label>
+          <a id="search-cep" class="bi bi-box-arrow-up-right" href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a>
         </div>
       </div>
       <div class="row mb-3">
@@ -186,7 +186,6 @@
         <button id="save-btn" type="submit" class="btn btn-primary">
           Cadastrar
         </button>
-        <div><a id="search-cep" class="bi bi-box-arrow-up-right" href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a></div>
       </div>
     </form>
   </div>
