@@ -73,14 +73,10 @@
     max-width: 700px;
 }
 
-#form-adress{
-    padding-top: 15px;
-}
-
 #order-form-container input,
 #order-form-container select {
-  border: 2px solid var(--line-color);
-  color: var(--text-color);
+    border: 2px solid var(--line-color);
+    color: var(--text-color);
 }
 
 #order-form-container select {
@@ -104,3 +100,20 @@
   #order-form-container .form-floating > label {
     left: 1em;
   }
+
+#save-btn{
+    border: none;
+    background-color: var(--primary-color);
+}
+
+#search-cep{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-size: 10pt;
+    right: 36.5%;
+    gap: 5px;
+    top: 38%;
+    color: var(--text-color);
+    text-decoration: underline;
+}
