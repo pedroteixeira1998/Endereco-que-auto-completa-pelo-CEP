@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/Css/style.css">
-    <script src="assets/JavaScript/javascript.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Endereço</title>
+    <script src="assets/JavaScript/javascript.js" defer></script>
 </head>
 <body id="checkout-page">
   <div id="fade" class="hide">
-    <div id="loader" class="spinner-border text-info hide" role="status">
+    <div id="loader" class="spinner-border text-dark hide" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
     <div id="message" class="hide">
@@ -61,14 +61,14 @@
         </div>
       </div>
       <div class="row mb-1">
-        <div class="form-floating" id="cep">
+        <div class="form-floating">
           <input
             type="text"
             class="form-control shadow-none"
             id="cep"
             name="cep"
             placeholder="Digite o seu CEP"
-            maxlength="9"
+            maxlength="8"
             minlength="8"
             required
           />
