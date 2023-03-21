@@ -46,17 +46,38 @@
 
       //Mostrar mensagem de erro e resetar formulário
      if (data.erro === "true") {
+        if(!addressInput.hasAttribute("disabled")){
+            toggleDisabled()}
+
          addressForm.reset();
          toggleLoader();
          toggleMessage("CEP inválido, tente novamente.");
          return;
      }
 
+     if(addressInput.value === ""){
+        toggleDisabled();
+     };
+
      addressInput.value = data.logradouro;
      cityInput.value = data.localidade;
      neighborhoodInput.value = data.bairro;
      regionInput.value = data.uf;
      toggleLoader();
+ };
+
+ // Adicionar ou remover atributo de desativado
+ const toggleDisabled = () =>{
+    if(regionInput.hasAttribute("disabled")){
+        formInputs.forEach((input) => {
+            input.removeAttribute("disabled");
+        })
+    }
+    else {
+        formInputs.forEach((input) =>{
+            input.setAttribute("disabled", "disabled")
+        });
+    };
  };
 
   //Mostrar ou esconder o loader
@@ -79,4 +100,24 @@
       messageElement.classList.toggle("hide");
   };
 
+closeButton.addEventListener("click", () => {
+    toggleMessage(); 
+});
 
+//Salvar endereço
+
+addressForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    toggleLoader();
+
+    setTimeout(() => {
+        toggleLoader();
+
+        toggleMessage("Endereço salvo com sucesso!");
+
+        addressForm.reset();
+
+        toggleDisabled();
+    }, 1000);
+});
