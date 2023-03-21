@@ -1,81 +1,82 @@
-const addressForm = document.querySelector("address-form");
-const cepInput = document.querySelector("#cep");
-const addressInput = document.querySelector("address");
-const cityInput = document.querySelector("city");
-const neighborhoodInput = document.querySelector("neighborhood");
-const regionInput = document.querySelector("region");
-const formInputs = document.querySelectorAll("[data-input]");
-const fadeElement = document.querySelector("#fade");
 
-const closeButton = document.querySelector("close-message");
+ const addressForm = document.querySelector("#address-form");
+ const cepInput = document.querySelector("#cep");
+ const addressInput = document.querySelector("#address");
+ const cityInput = document.querySelector("#city");
+ const neighborhoodInput = document.querySelector("#neighborhood");
+ const regionInput = document.querySelector("#region");
+ const formInputs = document.querySelectorAll("[data-input]");
+ const fadeElement = document.querySelector("#fade");
 
-// Validando o Input CEP
-cepInput.addEventListener("keypress", (e) =>{
-    const onlyNumbers = /[0-9]/;
-    const key = String.fromCharCode(e.keyCode);
+ const closeButton = document.querySelector("#close-message");
 
-    // Permitir apenas números
-    if(!onlyNumbers.test(key)){
-        e.preventDefault();
-        return;
-    }
-})
+  //Validando o Input CEP
+ cepInput.addEventListener("keypress", (e) =>{
+     const onlyNumbers = /[0-9]/;
+     const key = String.fromCharCode(e.keyCode);
 
-// Adicionar event
-cepInput.addEventListener("keyup", (e) =>{
-    const inputValue = e.target.value;
+      //Permitir apenas números
+     if(!onlyNumbers.test(key)){
+         e.preventDefault();
+         return;
+     }
+ })
 
-    // Checando se tem o tamanho correto
-    if(inputValue.length === 8){
-        getAddress(inputValue);
-    }
-})
+  //Adicionar evento
+ cepInput.addEventListener("keyup", (e) =>{
+     const inputValue = e.target.value;
 
-//Customizando endereço com API
-const getAddress = async (cep) => {
-    toggleLoader();
+      //Checando se tem o tamanho correto
+     if(inputValue.length === 8){
+         getAddress(inputValue);
+     }
+ })
 
-    cepInput.blur();
+ //Customizando endereço com API
+ const getAddress = async (cep) => {
+     toggleLoader();
 
-    const apiUrl = `https://viacep.com.br/ws/${cep}/json/`
+     cepInput.blur();
 
-    const response = await fetch(apiUrl)
+     const apiUrl = `https:viacep.com.br/ws/${cep}/json/`
 
-    const data = await response.json()
+     const response = await fetch(apiUrl)
 
-    // Mostrar mensagem de erro e resetar formulário
-    if (data.erro === "true") {
-        addressForm.reset();
-        toggleLoader();
-        toggleMessage("CEP inválido, tente novamente.");
-        return;
-    }
+     const data = await response.json()
 
-    addressInput.value = data.logradouro;
-    cityInput.value = data.localidade;
-    neighborhoodInput.value = data.bairro;
-    regionInput.value = data.uf;
-    toggleLoader();
-};
+      //Mostrar mensagem de erro e resetar formulário
+     if (data.erro === "true") {
+         addressForm.reset();
+         toggleLoader();
+         toggleMessage("CEP inválido, tente novamente.");
+         return;
+     }
 
-// Mostrar ou esconder o loader
-const toggleLoader = () => {
-    const loaderElement = document.querySelector("#loader");
+     addressInput.value = data.logradouro;
+     cityInput.value = data.localidade;
+     neighborhoodInput.value = data.bairro;
+     regionInput.value = data.uf;
+     toggleLoader();
+ };
 
-    fadeElement.classList.toggle("hide");
-    loaderElement.classList.toggle("hide");
-};
+  //Mostrar ou esconder o loader
+ const toggleLoader = () => {
+     const loaderElement = document.querySelector("#loader");
 
-// Mostra ou esconder mensagem
-const toggleMessage = (msg) => {
-    const messageElement = document.querySelector("#message");
+     fadeElement.classList.toggle("hide");
+     loaderElement.classList.toggle("hide");
+ };
 
-    const messageElementText = document.querySelector("#message p");
+  //Mostra ou esconder mensagem
+  const toggleMessage = (msg) => {
+      const messageElement = document.querySelector("#message");
 
-    messageElementText.innerText = msg;
+      const messageElementText = document.querySelector("#message p");
 
-    fadeElement.classList.toggle("hide");
-    messageElement.classList.toggle("hide");
-};
+      messageElementText.innerText = msg;
+
+      fadeElement.classList.toggle("hide");
+      messageElement.classList.toggle("hide");
+  };
 
 
