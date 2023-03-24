@@ -351,4 +351,4 @@ https://pedroteixeira1998.github.io/Endereco-que-auto-completa-pelo-CEP/
 
 Linkedin: https://www.linkedin.com/in/pedro-teixeira-51a75b265/
 
-Githun: https://github.com/pedroteixeira1998
+Github: https://github.com/pedroteixeira1998
