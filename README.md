@@ -11,7 +11,7 @@ Tela de cadastro de endereço que se auto-completa com o CEP. Conta com campos p
 
 ## Motivação
 
-Esse projeto foi desenvolvido com o intuito de reforçar funções JavaScript, treinar o uso de APIs e BootStrap.
+Esse projeto foi desenvolvido com o intuito de reforçar funções JavaScript, treinar o uso de APIs e BootStrap, além de funções básicas JavaScript.
 
 ## HTML
 
